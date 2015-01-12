@@ -3,16 +3,18 @@
 # Install dependencies
 apt-get update
 apt-get -y upgrade
-apt-get install -y build-essential bison flex bc libcap-dev git libboost-all-dev python python-dev python-pip llvm-3.4 \
-  llvm-3.4-dev clang gcc-multilib gdb \
+apt-get --ignore-missing –install-suggests install -y build-essential bison flex bc libcap-dev libboost-all-dev python python-dev python-pip llvm-3.4 \
+  llvm-3.4-dev clang gcc-multilib gdb gcc-dev \
   libevent-dev libgoogle-perftools-dev libncurses5-dev binutils-dev nasm libiberty-dev libsdl1.2-dev liblua5.1-0-dev libsigc++-2.0-dev \
-  automake cmake valgrind cloc ipython \
+  libc6-dev-i386 libtool binutils-dev libsdl-dev \
+  subversion git diffutils findutils binutils \
+  qemu qemu-kvm qemu-utils automake cmake valgrind cloc ipython debootstrap \
   python-docutils python-pygments \
-  iotop htop strace linux-headers-generic \
-  unzip wget curl nano vim zsh tmux byobu ssh openssh-server \
-  gettext
+  iotop htop strace linux-headers-generic kernel-package \
+  unzip wget curl nano vim zsh tmux screen byobu ssh openssh-server \
+  gettext locales sudo
 
-# No password
+# No passwoord
 echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
 
 # Setup OpenSSH

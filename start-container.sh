@@ -36,5 +36,5 @@ port=$(docker port $container_id 22 | cut -d \: -f 2)
 
 # Setup passwordless login
 #cat .ssh/id_rsa.pub | sshpass -p nothingelsematters ssh root@localhost -p $port 'cat >> .ssh/authorized_keys'
-sshpass -p nothingelsematters ssh root@localhost -p $port 
+sshpass -p nothingelsematters ssh root@localhost -p $port
 #ssh root@localhost -p $port
